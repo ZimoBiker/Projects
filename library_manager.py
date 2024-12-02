@@ -12,6 +12,14 @@ class LibraryManager:
             lines = [line.strip() for line in db_file.readlines()]
             print("\nBOOKS IN CURRENT DATABASE: \n\n" + "\n".join(lines) + "\n")
 
+    @staticmethod
+    def get_valid_input(prompt):
+        while True:
+            user_input = input(prompt).strip()
+            if user_input:
+                return user_input
+            print("Value cannot be empty. Please try again.")
+
     def add_book_to_database(self, book: str):
         with open(self.db_path, "a") as db_file:
             db_file.writelines(book + "\n")

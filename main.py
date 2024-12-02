@@ -33,10 +33,18 @@ def main(*args):
             )
         match choice.lower():
             case "1":
-                name = input("Please enter the name of the book: ").strip()
-                author = input("Please enter the author of the book: ").strip()
-                isbn = input("Please enter the ISBN of the book: ").strip()
-                year = input("Please enter the year the book was published: ").strip()
+                name = lib_manager.get_valid_input(
+                    "Please enter the name of the book: "
+                )
+                author = lib_manager.get_valid_input(
+                    "Please enter the author of the book: "
+                )
+                isbn = lib_manager.get_valid_input(
+                    "Please enter the ISBN of the book: "
+                )
+                year = lib_manager.get_valid_input(
+                    "Please enter the year the book was published: "
+                )
                 book = f"//{name}//{author}//{isbn}//{year}//"
                 while True:
                     add = ""
